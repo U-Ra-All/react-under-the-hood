@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Button from "./components/UI/Button";
 import ParagraphOutput from "./components/Output/ParagraphOutput";
 
@@ -8,9 +8,9 @@ function App() {
 
   console.log("App Component");
 
-  const toogleParagraph = () => {
+  const toogleParagraph = useCallback(() => {
     setIsParagraphShown((prevIsParagraphShown) => !prevIsParagraphShown);
-  };
+  }, []);
 
   return (
     <div className="app">
